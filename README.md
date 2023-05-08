@@ -8,3 +8,5 @@ for /currency/minfin-average-exchange-rate-period/{dayPointMonthPointYear}
 https://api.minfin.com.ua/summary/e76f4fb5b5347d64ff0a2c9b02e9f787295e1ca2/{dayPointMonthPointYear}
 The count to take exchange rate is restricted. For this reason I creted stub application to take below values.
 
+The dependencies were taken from maven instead Gradle
+
