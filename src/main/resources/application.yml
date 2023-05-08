@@ -1,0 +1,35 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: exchange-rate
+  datasource:
+    continue-on-error: true
+    username: postgres
+    password: sqlpas
+    url: jdbc:postgresql://localhost:5432/exchange_rate
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        format_sql: true
+    show-sql: false
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog-master.xml
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+      accept-single-value-as-array: true
+  cloud:
+    loadbalancer:
+      ribbon:
+        enable: false
+app:
+  cron-job-parser: 0 35 15 * * ?
